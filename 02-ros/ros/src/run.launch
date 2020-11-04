@@ -1,0 +1,7 @@
+<launch>
+    <param name="hitman_speed" value="10.0"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtle1"/>
+    <node pkg='rosservice' type='rosservice' name='hitman' args='call /spawn 0.0 0.0 0.0 hitman' />
+    <node pkg="turtlesim" type="turtle_teleop_key" name="splinter" output="screen"/>
+    <node pkg="ros" type="hitman.py" name="main"/>
+</launch>
